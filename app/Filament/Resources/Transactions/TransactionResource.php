@@ -18,16 +18,7 @@ class TransactionResource extends Resource
 {
     protected static ?string $model = Transaction::class;
 
-    // protected static string|BackedEnum|null $navigationIcon = 'iconpark-transaction';
-    protected static string|BackedEnum|null $navigationIcon = 'heroicon-o-truck';
-
-    protected static ?string $recordTitleAttribute = 'name';
-
-    protected static ?string $modelLabel = 'Transaksi';
-
-    protected static ?string $pluralModelLabel = "Transaksi Sampah";
-
-    protected static ?string $navigationLabel = "Data Transaksi Sampah";
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
     public static function form(Schema $schema): Schema
     {
@@ -36,8 +27,7 @@ class TransactionResource extends Resource
 
     public static function table(Table $table): Table
     {
-        return TransactionsTable::configure($table)
-            ->recordUrl(null);
+        return TransactionsTable::configure($table);
     }
 
     public static function getRelations(): array

@@ -23,7 +23,7 @@ return new class extends Migration
             //detail hitungan
             $table->integer('jumlah')->default(1);
             $table->float('berat')->default(1);
-            $table->integer('harga_per_kg');
+            $table->integer('harga_per_kg')->nullable();
             $table->bigInteger('subtotal'); // jumlah * berat * harga
             $table->timestamps();
         });
